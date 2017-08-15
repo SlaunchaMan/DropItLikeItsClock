@@ -116,8 +116,18 @@ public class ClockView: UIView {
         displayLink?.add(to: .main, forMode: .commonModes)
     }
     
+    private var lastDate: Date?
+    
     @objc private func drawCurrentWatchFace() {
-        drawWatchFace(for: Date())
+        let date = Date()
+        
+        drawWatchFace(for: date)
+        
+        if let lastDate = lastDate {
+            NSLog("Time: \(date.timeIntervalSince(lastDate))")
+        }
+
+        lastDate = date
     }
     
     private func drawWatchFace(for date: Date) {
