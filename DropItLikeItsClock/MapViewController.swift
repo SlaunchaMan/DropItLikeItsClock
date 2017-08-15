@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 import Alamofire
 
@@ -20,8 +21,23 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapView?.userTrackingMode = .follow
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways, .authorizedWhenInUse:
+            mapView?.showsUserLocation = true
+            mapView?.userTrackingMode = .follow
+        case .notDetermined:
+            locationManager?.requestWhenInUseAuthorization()
+        default:
+            break
+        }
+        
     }
+    
+    lazy var locationManager: CLLocationManager? = {
+        let manager = CLLocationManager()
+        manager.delegate = self
+        return manager
+    }()
     
     @IBAction func handleLongPress(_ sender: UILongPressGestureRecognizer) {
         guard let mapView = mapView else { fatalError() }
@@ -64,6 +80,20 @@ extension MapViewController: MKMapViewDelegate {
         }
                 
         return nil
+    }
+    
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager,
+                         didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            mapView?.showsUserLocation = true
+        default:
+            mapView?.showsUserLocation = false
+        }
     }
     
 }

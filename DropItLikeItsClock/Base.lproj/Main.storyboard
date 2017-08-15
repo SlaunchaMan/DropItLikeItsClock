@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3w6-HA-XN5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3w6-HA-XN5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-vY-wvO">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-vY-wvO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -33,10 +33,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fUE-vY-wvO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7le-yc-oS1"/>
                             <constraint firstItem="fUE-vY-wvO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QCI-by-qVa"/>
                             <constraint firstItem="fUE-vY-wvO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VpW-6S-qha"/>
-                            <constraint firstItem="fUE-vY-wvO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kVR-Ft-Trm"/>
                             <constraint firstAttribute="trailing" secondItem="fUE-vY-wvO" secondAttribute="trailing" id="uQe-1r-UoL"/>
                             <constraint firstAttribute="bottomMargin" secondItem="fUE-vY-wvO" secondAttribute="bottomMargin" id="vic-CC-d0U"/>
                         </constraints>
@@ -61,7 +59,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3w6-HA-XN5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eHj-FE-Un1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
